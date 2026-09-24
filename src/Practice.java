@@ -11,6 +11,7 @@ public class Practice {
      * @return the sum of the odd numbers in the array
      */
     public static int oddSum(int[] nums) {
+        
     // check null
     int sum = 0;
     if (nums == null) {
@@ -37,7 +38,24 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+
+        // check words
+        if (words == null) throw new NullPointerException();
+        if (words.isEmpty()) throw new IllegalArgumentException();
+
+        String shortest = null;
+
+        for (String word : words) {
+            if (shortest == null) shortest = word;
+
+            if (word.length() < shortest.length())
+                shortest = word;
+
+            if (word.length() == shortest.length()
+                    && word.compareTo(shortest) < 0)
+                shortest = word;
+        }
+        return shortest;
     }
 
     /**
