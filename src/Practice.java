@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -12,7 +11,18 @@ public class Practice {
      * @return the sum of the odd numbers in the array
      */
     public static int oddSum(int[] nums) {
+    // check null
+    int sum = 0;
+    if (nums == null) {
         return 0;
+    }
+
+    for (int i = 0; i < nums.length; i++) {
+        if (nums[i] % 2 != 0) {
+            sum += nums[i];
+        }
+    }
+        return sum;
     }
 
     /**
