@@ -130,7 +130,8 @@ public class Practice {
 
     // make map
 
-        if (head == null) return frequency;
+        if (head == null) 
+            return frequency;
 
         ListNode<T> current = head;
 
@@ -159,8 +160,18 @@ public class Practice {
      * @return the number of levels in the tree
      */
     public static int levelCount(BinaryTreeNode<?> root) {
-        return 0;
+
+        // check tree
+
+        if (root == null) 
+            return 0;
+
+        int left = levelCount(root.left);
+        int right = levelCount(root.right);
+
+        return 1 + Math.max(left, right);
     }
+
 
 
     /**
