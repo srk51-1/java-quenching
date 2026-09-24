@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ public class Practice {
      * @return the sum of the odd numbers in the array
      */
     public static int oddSum(int[] nums) {
-        
+
     // check null
     int sum = 0;
     if (nums == null) {
@@ -68,7 +69,19 @@ public class Practice {
      * @throws NullPointerException if ages is null
      */
     public static Set<String> adults(Map<String, Integer> ages) {
-        return null;
+
+         // check ages
+        if (ages == null) throw new NullPointerException();
+
+        Set<String> result = new HashSet<>();
+
+        for (String name : ages.keySet()) {
+            if (ages.get(name) >= 18) {
+                result.add(name);
+            }
+        }
+
+        return result;
     }
 
     /**
